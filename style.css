@@ -92,17 +92,7 @@ span.gold {
     border-radius: 8px;
 }
 
-/* Responsive adjustment for Mobile Phones */
-@media (max-width: 768px) {
-    .hero-container {
-        flex-direction: column-reverse; /* Put text below image on phones */
-        text-align: center;
-        padding-top: 50px;
-    }
-    .hero-content {
-        text-align: center;
-    }
-}
+
 
 /* Container for general use */
 .container {
@@ -248,10 +238,30 @@ span.gold {
     margin-top: 30px;
 }
 
-/* Responsive for Mobile */
-@media (max-width: 768px) {
-    .author-flex {
-        flex-direction: column;
+/* MOBILE FIX */
+@media screen and (max-width: 768px) {
+    
+    /* 1. Stack the Hero Section (Book and Text) */
+    .hero-container, .author-flex {
+        flex-direction: column !important; /* Forces vertical stacking */
+        text-align: center;
+        padding-top: 40px;
+    }
+
+    /* 2. Fix the Image Size so it doesn't overflow */
+    .hero-image img, .author-image img {
+        width: 80%; /* Makes the book a bit smaller on phones */
+        margin-bottom: 30px;
+    }
+
+    /* 3. Adjust the Headline size for small screens */
+    h1 {
+        font-size: 2rem !important; /* Smaller text so it fits the screen width */
+    }
+
+    /* 4. Ensure the Info Grid stacks vertically */
+    .info-grid {
+        grid-template-columns: 1fr !important; /* Only 1 column on mobile */
     }
 }
 
