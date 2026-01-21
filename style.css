@@ -146,3 +146,65 @@ h1, h2, h3 {
     align-items: center;     /* Centering vertically if needed */
     padding: 60px 0;         /* Adds space at the bottom of your page */
 }
+
+/* Container for the slider */
+.slider-container {
+    width: 100%;
+    max-width: 900px;
+    margin: 0 auto;
+    position: relative;
+    padding: 20px 0;
+}
+
+/* The actual scrolling area */
+.slider {
+    display: flex;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory; /* The magic for snapping */
+    scroll-behavior: smooth;
+    gap: 20px;
+    padding: 20px;
+    scrollbar-width: thin; /* For Firefox */
+    scrollbar-color: var(--ocean-blue) transparent;
+}
+
+/* Hide scrollbar for Chrome/Safari to keep it clean */
+.slider::-webkit-scrollbar {
+    height: 8px;
+}
+.slider::-webkit-scrollbar-thumb {
+    background: var(--ocean-blue);
+    border-radius: 10px;
+}
+
+/* Individual Slides */
+.slide {
+    flex: 0 0 80%; /* Shows 80% of the image so the next one peaks in */
+    scroll-snap-align: center;
+    transition: transform 0.3s ease;
+}
+
+.slide img {
+    width: 100%;
+    height: auto;
+    border-radius: 15px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4);
+    border: 2px solid rgba(144, 224, 239, 0.2);
+    display: block;
+}
+
+/* Visual Hint */
+.scroll-hint {
+    text-align: center;
+    font-size: 0.9rem;
+    color: var(--sky-blue);
+    margin-top: 15px;
+    opacity: 0.7;
+}
+
+/* Desktop adjustment: Show more slides at once */
+@media (min-width: 768px) {
+    .slide {
+        flex: 0 0 45%; /* Shows two slides on desktop */
+    }
+}
