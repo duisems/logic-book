@@ -190,3 +190,23 @@ h1, h2, h3 {
 .slider::-webkit-scrollbar {
     display: none;
 }
+
+.books-left {
+    text-align: center;      /* Centers the text */
+    padding: 20px;
+    margin: 40px auto;       /* Adds space above and below */
+    max-width: 600px;
+    background: rgba(0, 119, 182, 0.1); /* Subtle blue background */
+    border: 1px solid var(--ocean-blue);
+    border-radius: 12px;
+    color: #ffffff;
+    font-size: 1.1rem;
+}
+
+/* This is the part that highlights the text */
+.books-left span {
+    color: #ff4d4d;          /* Bright red to show urgency */
+    font-weight: bold;
+    text-decoration: underline;
+    font-size: 1.2rem;
+}
